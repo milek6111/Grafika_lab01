@@ -79,7 +79,7 @@ int main()
 					break;
 				case::sf::Keyboard::Escape:
 					surr.setString("YOU SURRENDERED!");
-					surr.setCharacterSize(50);
+					surr.setCharacterSize(sokoban.Get_Tile_Size().x*20 / static_cast<std::string>("YOU SURRENDERED!").size());
 					sf::FloatRect textRect = surr.getLocalBounds();
 					surr.setOrigin(textRect.width / 2, textRect.height / 2);
 					surr.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
@@ -103,7 +103,7 @@ int main()
 			}
 			if (sokoban.Is_Victory()) {
 				win.setString("YOU WON IN " + std::to_string(tm) + " SECONDS");
-				win.setCharacterSize(50);
+				win.setCharacterSize(sokoban.Get_Tile_Size().x * 20 / static_cast<std::string>(win.getString()).size());
 				sf::FloatRect textRect = win.getLocalBounds();
 				win.setOrigin(textRect.width / 2, textRect.height / 2);
 				win.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
@@ -119,7 +119,7 @@ int main()
 
 				do {
 					elapsed = time.getElapsedTime();
-				}while (elapsed.asSeconds() < 5);
+				}while (elapsed.asSeconds() < 3);
 				
 				window.close();
 			}
