@@ -1,5 +1,3 @@
-//Uwaga! Co najmniej C++17!!!
-//Project-> ... Properties->Configuration Properties->General->C++ Language Standard = ISO C++ 17 Standard (/std:c++17)
 
 #include "Sokoban.h"
 
